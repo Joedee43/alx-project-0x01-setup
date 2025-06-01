@@ -39,12 +39,6 @@ export interface UserData {
   }
 }
 
-export interface UserModalProps {
-  isOpen: boolean
-  onClose: () => void
-  onSave: (user: UserData) => void
-}
-
 export interface UserProps {
   id: number
   name: string
@@ -67,4 +61,10 @@ export interface UserProps {
     catchPhrase: string
     bs: string
   }
+}
+
+export interface UserModalProps {
+  isOpen: boolean
+  onClose: () => void
+  onSubmit: (user: UserProps) => void
 }

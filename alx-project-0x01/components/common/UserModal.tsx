@@ -25,7 +25,7 @@ const emptyUser: UserData = {
   },
 }
 
-const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSave }) => {
+const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const [formData, setFormData] = useState<UserData>(emptyUser)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +37,7 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSave }) => {
   }
 
   const handleSubmit = () => {
-    onSave(formData)
+    onSubmit(formData)
     setFormData(emptyUser)
     onClose()
   }
