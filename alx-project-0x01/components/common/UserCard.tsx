@@ -1,20 +1,26 @@
-import React from "react"
-import { UserProps } from "@/interfaces"
+import { UserProps } from "@/interfaces";
 
-const UserCard: React.FC<{ user: UserProps }> = ({ user }) => {
+const UserCard: React.FC<UserProps> = ({
+  id,
+  name,
+  username,
+  email,
+  address,
+  phone,
+  website,
+  company
+}) => {
   return (
-    <div className="border p-4 rounded-md shadow hover:shadow-lg transition-all bg-white w-full max-w-md">
-      <h2 className="text-xl font-semibold text-blue-600">{user.name}</h2>
-      <p className="text-gray-700 mb-1">@{user.username}</p>
-      <p className="text-sm text-gray-600 mb-2">{user.email}</p>
-      <p className="text-sm">
-        <strong>Address:</strong> {user.address.street}, {user.address.city}
-      </p>
-      <p className="text-sm"><strong>Phone:</strong> {user.phone}</p>
-      <p className="text-sm"><strong>Website:</strong> {user.website}</p>
-      <p className="text-sm"><strong>Company:</strong> {user.company.name}</p>
+    <div className="border p-4 rounded shadow">
+      <h2 className="text-xl font-bold">{name}</h2>
+      <p>@{username}</p>
+      <p>{email}</p>
+      <p>{address.street}, {address.city}</p>
+      <p>{phone}</p>
+      <p>{website}</p>
+      <p className="italic">{company.catchPhrase}</p>
     </div>
-  )
-}
+  );
+};
 
-export default UserCard
+export default UserCard;
